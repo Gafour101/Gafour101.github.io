@@ -67,13 +67,23 @@ body {
 
 .mypic {
     width: 100%;
-    max-width: 300px;
-    border-radius: 6px;
-    filter: grayscale(100%);
-    transition: filter 0.3s;
+    max-width: 350px;
+    border-radius: 3px;
+    background-color: #64FFDA;
+    box-shadow: 15px 15px 0 0 #0a192f, 15px 15px 0 2px #64FFDA;
+    transition: box-shadow 0.10s ease-in-out, filter 0.10s ease-in-out;
 }
 
 .mypic:hover {
     filter: grayscale(0%);
-    box-shadow: none;
+    box-shadow: 20px 20px 0 0 #0a192f, 20px 20px 0 2px #64FFDA;
+}
+
+@keyframes shadow-pulse {
+    0% {
+        box-shadow: 15px 15px 0 0 #0a192f, 15px 15px 0 2px #64FFDA;
+    }
+    100% {
+        box-shadow: 20px 20px 0 0 #0a192f, 20px 20px 0 2px #64FFDA;
+    }
 }
