@@ -32,9 +32,44 @@ body {
     max-width: 50px;
 }
 
+.active {
+    color: #64FFDA !important;
+}
+
 .nav-link:hover,
 .nav-link:active {
     color: #64FFDA !important;
+}
+
+.mytext-link {
+    text-decoration: none;
+    /* Remove the default underline */
+    color: #64FFDA;
+    /* Set the link color (you can change this to your preferred color) */
+    position: relative;
+    /* Set the position to relative for the pseudo-element */
+}
+
+.mytext-link::before {
+    content: '';
+    /* Add content to the pseudo-element */
+    position: absolute;
+    bottom: -3px;
+    /* Position it just below the link text */
+    left: 0;
+    /* Start the underline from the left */
+    width: 0;
+    /* Initially, the underline has no width */
+    height: 0.5px;
+    /* Set the height and color of the underline */
+    background-color: #74eed2;
+    transition: width 0.4s ease;
+    /* Add a transition effect for the width property */
+}
+
+.mytext-link:hover::before {
+    width: 100%;
+    /* Expand the underline to full width on hover */
 }
 
 .primary-btn {
@@ -67,7 +102,7 @@ body {
 
 .mypic {
     width: 100%;
-    max-width: 350px;
+    max-width: 270px;
     border-radius: 3px;
     background-color: #64FFDA;
     box-shadow: 15px 15px 0 0 #0a192f, 15px 15px 0 2px #64FFDA;
@@ -86,4 +121,25 @@ body {
     100% {
         box-shadow: 20px 20px 0 0 #0a192f, 20px 20px 0 2px #64FFDA;
     }
+}
+
+.tab-links {
+    cursor: pointer;
+    font-weight: 500 !important;
+    margin-right: 0px;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #64FFDA;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tablinks.active-tab::after {
+    width: 100%;
 }
